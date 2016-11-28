@@ -10,7 +10,10 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
 
+  console.log("Booth Connected!")
+
   socket.on('scan', function(msg){
+    console.log("Scan Recieved:")
     console.log(msg);
     io.emit('update', msg);
   });

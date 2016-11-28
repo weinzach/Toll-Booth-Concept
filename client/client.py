@@ -23,6 +23,7 @@ while True:
         data['time'] =  strftime("%Y-%m-%d %H:%M:%S", gmtime())
         json_data = json.dumps(data)
         socketIO.emit('scan', json_data)
+        print("Emitted Scan!")
     except nxppy.SelectError:
         # SelectError is raised if no card is in the field.
         pass
